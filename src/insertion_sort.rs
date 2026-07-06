@@ -15,15 +15,12 @@ pub mod insertion_sort {
 
         for i in 1..n {
             let key = arr[i];
-            let mut j = i - 1;
-            while j > 0 {
-                if arr[j] > key {
-                    arr[j + 1] = key;
-                    break;
-                }
-                j = j - 1;
+            let mut j = i;
+            while j > 0 && arr[j - 1] > key {
+                arr[j] = arr[j-1];
+                j -= 1;
             }
-            arr[j + 1] = key;
+            arr[j] = key;
         }
     }
 }
