@@ -13,16 +13,14 @@ pub mod insertion_sort {
             Err(ArrayError::IndexOutOfBounds) => println!("IndexOutOfBounds")
         }
 
-        let i: usize = 2;
-        for i in i..n {
+        for i in 1..n {
             let key = arr[i];
             let mut j = i - 1;
             while j > 0 {
-                if arr[j] < key {
+                if arr[j] > key {
                     arr[j + 1] = key;
                     break;
                 }
-                arr[j + 1] = arr[j];
                 j = j - 1;
             }
             arr[j + 1] = key;

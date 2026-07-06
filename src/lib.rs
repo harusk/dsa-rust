@@ -7,8 +7,8 @@ mod tests {
 
     #[test]
     fn sorts_with_insertion_sort() {
-        let mut arr = [1,5,6,7,3,4];
-        let arr_result = [1,3,4,5,6,7];
+        let mut arr = [9,5,6,7,2,4];
+        let arr_result = [2,4,5,6,7,9];
         sort(&mut arr, 6);
         assert_eq!(arr, arr_result);
     }
