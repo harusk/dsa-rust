@@ -3,11 +3,14 @@ pub mod insertion_sort {
         IndexOutOfBounds,
     }
 
-    fn check_bounds(arr: &[i32], n: usize) -> Result<&i32, ArrayError> {
+    fn check_bounds<T>(arr: &[T], n: usize) -> Result<&T, ArrayError> {
         arr.get(n).ok_or(ArrayError::IndexOutOfBounds)
     }
 
-    pub fn sort(arr: &mut [i32], n: usize) {
+    pub fn sort<T>(arr: &mut [T], n: usize) 
+    where
+        T: PartialOrd + Copy
+    {
         match check_bounds(arr, n - 1) {
             Ok(_val) => (),
             Err(ArrayError::IndexOutOfBounds) => println!("IndexOutOfBounds")
